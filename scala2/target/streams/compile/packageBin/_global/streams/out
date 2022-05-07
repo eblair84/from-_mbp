@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/chris/code/scala2/target/scala-2.12/scala2_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello2$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/chris/code/scala2/target/scala-2.12/classes/Hello2$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/chris/code/scala2/target/scala-2.12/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/chris/code/scala2/target/scala-2.12/classes/Hello$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/chris/code/scala2/target/scala-2.12/classes/Hello.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/chris/code/scala2/target/scala-2.12/classes/Hello2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Hello2$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/chris/code/scala2/target/scala-2.12/classes/Hello2$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/chris/code/scala2/target/scala-2.12/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fractal Tree</title>
+  <style>
+    #myCanvas{
+      border: solid 1px black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="1280" height="720"></canvas>
+  <script>
+    var canvasId = document.getElementById('myCanvas');
+    var context = canvasId.getContext("2d");
+    function animateTree(x, y, len, startingAngle) {
+      // Clear the canvas so we can draw on it again.
+      for(let i = 0; i < 30; i+=15){
+        context.clearRect(0, 0, 1280, 720);
+        drawFract(x, y, len, i);
+        //window.requestAnimationFrame(animateTree);
+      }
+
+
+    }
+
+    setTimeout(function () {
+      window.requestAnimationFrame(animateTree)
+    }, 2500);
+    animateTree(640,720,100,0);
+    function drawFract(x, y, len, angle){
+
+
+      let startX = x;
+      let startY = y;
+      context.beginPath();
+      context.save();
+      context.translate(startX, startY);
+      context.rotate(angle*Math.PI/180);
+      context.moveTo(0,0);
+      context.lineTo(0,-len);
+      context.stroke();
+      console.log(startY);
+      if (len < 10) {
+        context.restore();
+        return;
+      }
+      drawFract(0, -len, len*0.8,45);
+      drawFract(0, -len, len*0.8,-30);
+      context.restore();
+
+    }
+    /*context.beginPath();
+    context.moveTo(640,720);
+    context.lineTo(640,620);
+    context.lineTo(740,520);
+    context.moveTo(640,620);
+    context.lineTo(540,520);
+    context.stroke();*/
+  </script>
+</body>
+</html>

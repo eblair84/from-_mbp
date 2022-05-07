@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sierpinski Trianlge with dots</title>
+</head>
+<body>
+<canvas id="myCanvas" width="2000" height="1000"></canvas>
+<script>
+  var canvasId = document.getElementById('myCanvas');
+  var context = canvasId.getContext("2d");
+  let dot = {};
+  let triangle = {};
+  let radius = 1;
+  triangle = {x1:0, y1:866, x2:1000, y2:866,x3:500,y3:0};
+  let x = 10000;
+  let y = 10000;
+  while (x > Math.ceil(triangle.x3/2) && y > Math.ceil(triangle.y3/2)){
+    x = Math.floor(Math.random()*2000/2);
+    y = Math.floor(Math.random()*500/2);
+  }
+  let seed_vertex = Math.ceil(Math.random()*3);
+  let seed_x = 0;
+  let seed_y = 0;
+
+  if (seed_vertex == 1){
+    seed_x = Math.ceil((x + triangle.x1)/2);
+    seed_y = Math.ceil((y + triangle.y1)/2);
+  }
+  if (seed_vertex == 2){
+    seed_x = Math.ceil((x + triangle.x2)/2);
+    seed_y = Math.ceil((y + triangle.y2)/2);
+  }
+  if (seed_vertex == 3){
+    seed_x = Math.ceil((x + triangle.x3)/2);
+    seed_y = Math.ceil((y + triangle.y3)/2);
+  }
+  let firstDot = {seed_x, seed_y, radius};
+  drawDot(firstDot);
+  var curr_x = seed_x;
+  var curr_y = seed_y;
+  for (let i = 0; i < 50000; i++){
+    let vertex = Math.ceil(Math.random() * 3);
+    //console.info('Current x before switch: ' + curr_x);
+    //console.info('Current y before switch: ' + curr_y);
+    switch (vertex){
+      case 1:
+        curr_x = Math.floor((triangle.x1 + curr_x)/2);
+        curr_y = Math.floor((triangle.y1 + curr_y)/2);
+        dot = {x:curr_x, y:curr_y, radius:radius};
+        break;
+      case 2:
+        curr_x = Math.floor((triangle.x2 + curr_x)/2);
+        curr_y = Math.floor((triangle.y2 + curr_y)/2);
+        dot = {x:curr_x, y:curr_y, radius:radius};
+        break;
+      case 3:
+        curr_x = Math.floor((triangle.x3 + curr_x)/2);
+        curr_y = Math.floor((triangle.y3 + curr_y)/2);
+        dot = {x:curr_x, y:curr_y, radius:radius};
+        break;
+    }
+    drawDot(dot);
+  }
+  function drawDot(dot){
+    context.beginPath();
+    context.arc(dot.x,dot.y, dot.radius, 0, 2 * Math.PI, false);
+    context.fillStyle = "#a04c50";
+    context.fill();
+
+  }
+
+</script>
+</body>
+</html>
